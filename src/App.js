@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./Components/Header/Header";
+import ImageBackground from "./Components/ImageBackground/ImageBackground";
+import GetAreaContainer from "./Components/GetArea/getAreaContainer";
+import {connect} from "react-redux";
+import {useCallback, useEffect} from "react";
+import {getToken} from "./Redux/userReducer";
+import PostAreaContainer from "./Components/PostArea/PostAreaContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App({getToken, token}) {
+
+    const requestToken = useCallback(
+        async () => {
+            await getToken()
+        }, [getToken]
+    )
+
+    useEffect(() => requestToken, [])
+
+    return (
+        <div className="App">
+            <Header/>
+            <ImageBackground/>
+            <GetAreaContainer/>
+            <PostAreaContainer/>
+        </div>
+    );
 }
 
-export default App;
+const mapDispatchToProps = (state) => ({
+
+})
+
+export default connect(mapDispatchToProps, {getToken})(App);

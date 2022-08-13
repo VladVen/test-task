@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1170px;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+}

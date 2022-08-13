@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.img {
+    width: 1170px;
+    height: 650px;
+    background-image: url('../../Assets/pexels-alexandr-podvalny-1227513.jpeg');
+    background-size: cover;
+
+}
+.text {
+    width: 400px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family:'Nunito', sans-serif;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    margin-top: 36px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .img {
+        width: 1024px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .img {
+        width: 768px;
+        height: 500px;
+    }
+    .text{
+        top: 25%;
+    }
+}
+@media screen and (max-width: 380px) {
+    .img {
+        width:  360px;
+    }
+    .text{
+        width: 328px;
+    }
+}
