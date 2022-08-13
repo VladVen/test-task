@@ -13,8 +13,8 @@
 }
 .text {
     width: 400px;
-    position: absolute;
-    top: 35%;
+    position: relative;
+    top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -40,9 +40,6 @@
     .img {
         width: 768px;
         height: 500px;
-    }
-    .text{
-        top: 25%;
     }
 }
 @media screen and (max-width: 380px) {

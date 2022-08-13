@@ -1,5 +1,6 @@
 import React, {useCallback, useState} from "react";
 import {connect} from "react-redux";
+import style from './getArea.module.css'
 import {changePage, getUsers} from "../../Redux/userReducer";
 import GetArea from "./GetArea";
 import {useEffect} from "react";
@@ -16,7 +17,13 @@ const GetAreaContainer = React.memo(({getUsers,users, changePage}) => {
 
     useEffect(() => loadUsers, [])
 
-    if(fetching) return <Preloader />
+    if(fetching) {
+        return (
+            <div className={style.container}>
+                <Preloader/>
+            </div>
+            )
+    }
     return (
         <div>
             <GetArea users={users} changePage={changePage} />
